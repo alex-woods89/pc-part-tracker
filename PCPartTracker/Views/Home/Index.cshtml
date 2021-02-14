@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PC 
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,17 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div>
+    <ul>
+        <li>GPU @Model.Gpu.Name</li>
+        <li>CPU @Model.Cpu.Name</li>
+        <li>PSU @Model.Psu.Name</li>
+        <li>Mother Board @Model.Motherboard.Name</li>
+        <li>HardDrive @Model.Harddrive.Name</li>
+        <li>RAM @Model.Ram.Name</li>
+        <li>Case @Model.Case.Name</li>
+    </ul>
+    
+</div>
+

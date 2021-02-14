@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PCPartTracker.Models;
+using PCPartTracker.Repositories;
 
 namespace PCPartTracker.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IPCRepositiory _pcRepo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IPCRepositiory pcRepo)
         {
             _logger = logger;
+            _pcRepo = pcRepo;
+
         }
 
         public IActionResult Index()
         {
-            return View();
+            PC pc = _pcRepo.getPC();
+            _logger.LogInformation("Passing PC to The View");
+            return View(pc);
         }
 
         public IActionResult Privacy()
