@@ -1,13 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace PCPartTracker.Models
 {
     public class Motherboard : IComponent
     {
+        [Key]
+        public int PCID { get; set; }
         public string Name { get; set; }
 
-        public FormFactor FormFactor { get; set; }
+        public string FormFactor { get; set; }
 
-        public Motherboard(string name, FormFactor formFactor)
+        public Motherboard(string name, string formFactor)
         {
             Name = name;
             FormFactor = formFactor;

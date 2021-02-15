@@ -1,17 +1,20 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace PCPartTracker.Models
 {
     public class Case : IComponent
     {
-
+        [Key]
+        public int PCID { get; set; }
         public string Name { get; set; }
 
-        public FormFactor FormFactor { get; set; }
+        public string FormFactor { get; set; }
 
-        public Case(string name, FormFactor formFactor)
+        public Case(string name, string formFactor)
         {
             Name = name;
-            FormFactor = FormFactor;
+            FormFactor = formFactor;
         }
     }
 }
