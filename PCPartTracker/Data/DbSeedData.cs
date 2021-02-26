@@ -9,16 +9,10 @@ namespace PCPartTracker.Data
 {
     public class DbSeedData
     {
-        public static void Initialize(PCContext context)
+        public static void Initialize(Context context)
         {
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
-
-            //if (context.PCs.Any())
-            //{
-            //    return;
-            //}
-
-            var PCs = new List<PC>();
 
             PC pc1 = new PC();
             PSU psu = new PSU("PSU", 450);
@@ -36,6 +30,7 @@ namespace PCPartTracker.Data
             Case _case = new Case("Corsair", FormFactor.ATX.ToString());
             _case.PCID = pc1.ID;
 
+            pc1.Name = "PC 1";
             pc1.PSU = psu;
             pc1.GPU = gpu;
             pc1.CPU = cpu;
@@ -70,6 +65,7 @@ namespace PCPartTracker.Data
             _case1.PCID = pc2.ID;
 
 
+            pc2.Name = "PC 2";
             pc2.PSU = psu1;
             pc2.GPU = gpu1;
             pc2.CPU = cpu1;

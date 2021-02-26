@@ -1,0 +1,97 @@
+﻿@model PC
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>PC Details</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayFor(pc => Model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            GPU: @Html.DisplayFor(pc => Model.GPU.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            CPU: @Html.DisplayFor(pc => Model.CPU.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Case: @Html.DisplayFor(pc => Model.Case.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Hard Drive: @Html.DisplayFor(pc => Model.Harddrive.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Motherboard: @Html.DisplayFor(pc => Model.Motherboard.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            PSU: @Html.DisplayFor(pc => Model.PSU.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            RAM: @Html.DisplayFor(pc => Model.RAM.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>
+    </tr>
+
+
+</table>
+

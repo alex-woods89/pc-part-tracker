@@ -1,30 +1,52 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
+using PCPartTracker.Data;
 using PCPartTracker.Models;
 
 namespace PCPartTracker.Repositories
 {
     public class PCRepository : IPCRepositiory
     {
-        public PC getPC()
-        {
-            PSU psu = new PSU("PSU", 450);
-            GPU gpu = new GPU("Nvidia", 6, 2);
-            CPU cpu = new CPU("Intel", 4, "4.5Ghz");
-            Motherboard motherboard = new Motherboard("Alienware", FormFactor.ATX.ToString());
-            Harddrive harddrive = new Harddrive("Sandisk", "1TB");
-            RAM ram = new RAM("Sandisk", "8GB", 4);
-            Case _case = new Case("Corsair", FormFactor.ATX.ToString());
-            PC pc1 = new PC();
+        private Context _context;
 
-            pc1.PSU = psu;
-            pc1.GPU = gpu;
-            pc1.CPU = cpu;
-            pc1.Motherboard = motherboard;
-            pc1.Harddrive = harddrive;
-            pc1.RAM = ram;
-            pc1.Case = _case;
-            return pc1;
+        public PCRepository(Context context)
+        {
+            _context = context;
+        }
+        public DbSet<PC> getPCs()
+        {
+            return _context.PCs;
         }
 
+        public PC findPC(int id)
+        {
+            return _context.PCs.FirstOrDefault(x => x.ID == id);
+        }
+
+        public void savePC(PC pc)
+        {
+            _context.PCs.Add(pc);
+            _context.SaveChanges();
+        }
+
+        public void deletePC(PC pc)
+        {
+            _context.PCs.Remove(pc);
+            _context.SaveChanges();
+        }
+
+        public void updatePC(PC newPC)
+        {
+            PC oldPC = _context.PCs.Find(newPC.ID);
+            if (oldPC == null)
+            {
+                return;
+            }
+
+            _context.Entry(oldPC).CurrentValues.SetValues(newPC);
+            _context.SaveChanges();
+        }
     }
 }

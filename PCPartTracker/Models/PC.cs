@@ -9,6 +9,8 @@ namespace PCPartTracker.Models
     {
         public int ID { get; set; }
 
+        public string Name { get; set; }
+
         public GPU GPU { get; set; }
 
         public PSU PSU { get; set; }
@@ -22,17 +24,5 @@ namespace PCPartTracker.Models
         public RAM RAM { get; set; }
 
         public Case Case { get; set; }
-
-
-        //    public PC(int gpu, int psu, int motherboard, int cpu, int harddrive, int ram, int _case)
-        //    {
-        //        GpuID = gpu;
-        //        PsuID = psu;
-        //        MotherboardID = motherboard;
-        //        CpuID = cpu;
-        //        HarddriveID = harddrive;
-        //        RamID = ram;
-        //        CaseID = _case;
-        //    }
     }
 }

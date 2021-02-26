@@ -1,46 +1,59 @@
 ﻿<Properties StartupConfiguration="{454A2910-5160-4508-9E30-232C6CC3E04A}|Default">
   <MonoDevelop.Ide.ItemProperties.PCPartTracker PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/site.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repositories/RAMRepository.cs">
     <Files>
-      <File FileName="Startup.cs" Line="30" Column="1" />
-      <File FileName="Models/PC.cs" Line="8" Column="34" />
-      <File FileName="Models/Component.cs" Line="6" Column="9" />
-      <File FileName="Program.cs" Line="17" Column="1" />
-      <File FileName="Models/PSU.cs" Line="7" Column="15" />
-      <File FileName="Models/ErrorViewModel.cs" Line="1" Column="1" />
-      <File FileName="Models/CPU.cs" Line="8" Column="39" />
-      <File FileName="Models/Motherboard.cs" Line="12" Column="25" />
-      <File FileName="Enums/FormFactors.cs" Line="7" Column="2" />
-      <File FileName="Models/GPU.cs" Line="16" Column="47" />
-      <File FileName="Models/Harddrive.cs" Line="15" Column="10" />
-      <File FileName="Models/RAM.cs" Line="14" Column="43" />
-      <File FileName="Models/Case.cs" Line="7" Column="9" />
-      <File FileName="Views/Home/Index.cshtml" Line="1" Column="7" />
-      <File FileName="Views/Home/Privacy.cshtml" Line="7" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="16" Column="17" />
-      <File FileName="Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="Repositories/PCRepository.cs" Line="22" Column="6" />
-      <File FileName="Repositories/IPCRepositiory.cs" Line="11" Column="1" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
-      <File FileName="wwwroot/css/site.css" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="35" Column="42" />
+      <File FileName="Models/PC.cs" Line="8" Column="20" />
+      <File FileName="Program.cs" Line="31" Column="66" />
+      <File FileName="Models/PSU.cs" />
+      <File FileName="Models/ErrorViewModel.cs" />
+      <File FileName="Models/CPU.cs" />
+      <File FileName="Models/Motherboard.cs" />
+      <File FileName="Enums/FormFactors.cs" />
+      <File FileName="Models/GPU.cs" />
+      <File FileName="Models/Harddrive.cs" />
+      <File FileName="Models/RAM.cs" />
+      <File FileName="Models/Case.cs" />
+      <File FileName="Views/Home/Index.cshtml" Line="19" Column="1" />
+      <File FileName="Views/Home/Privacy.cshtml" />
+      <File FileName="Controllers/HomeController.cs" Line="26" Column="53" />
+      <File FileName="Views/Shared/Error.cshtml" />
+      <File FileName="Properties/launchSettings.json" />
+      <File FileName="Repositories/PCRepository.cs" Line="10" Column="24" />
+      <File FileName="Repositories/IPCRepositiory.cs" Line="12" Column="1" />
+      <File FileName="appsettings.json" Line="11" Column="23" />
+      <File FileName="wwwroot/css/site.css" />
+      <File FileName="Data/DbSeedData.cs" Line="12" Column="46" />
+      <File FileName="Data/PCContext.cs" Line="10" Column="25" />
+      <File FileName="ViewModels/PCViewModel.cs" Line="16" Column="45" />
+      <File FileName="Repositories/ICaseRepository.cs" Line="9" Column="32" />
+      <File FileName="Repositories/ICPURepository.cs" Line="9" Column="13" />
+      <File FileName="Repositories/IGPURepository.cs" Line="9" Column="30" />
+      <File FileName="Repositories/IHarddriveRepository.cs" Line="9" Column="42" />
+      <File FileName="Repositories/IMotherboardRepository.cs" Line="9" Column="46" />
+      <File FileName="Repositories/IPSURepository.cs" Line="9" Column="30" />
+      <File FileName="Repositories/IRAMRepository.cs" Line="7" Column="28" />
+      <File FileName="Repositories/CaseRepository.cs" Line="19" Column="35" />
+      <File FileName="Repositories/CPURepository.cs" Line="10" Column="9" />
+      <File FileName="Repositories/GPURepository.cs" Line="20" Column="34" />
+      <File FileName="Repositories/HardriveRepository.cs" Line="19" Column="40" />
+      <File FileName="Repositories/MotherboardRepository.cs" Line="20" Column="42" />
+      <File FileName="Repositories/PSURepository.cs" Line="20" Column="34" />
+      <File FileName="Repositories/RAMRepository.cs" Line="4" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PCPartTracker" expanded="True">
             <Node name="PCPartTracker" expanded="True">
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True">
-                  <Node name="site.css" selected="True" />
-                </Node>
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Repositories" expanded="True">
+                <Node name="RAMRepository.cs" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

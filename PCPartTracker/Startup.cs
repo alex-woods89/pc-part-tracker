@@ -28,9 +28,19 @@ namespace PCPartTracker
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddScoped<IPCRepositiory, PCRepository>();
+            services.AddScoped<ICaseRepository, CaseRepository>();
+            services.AddScoped<ICPURepository, CPURepository>();
+            services.AddScoped<IGPURepository, GPURepository>();
+            services.AddScoped<IHarddriveRepository, HardriveRepository>();
+            services.AddScoped<IMotherboardRepository, MotherboardRepository>();
+            services.AddScoped<IPSURepository, PSURepository>();
+            services.AddScoped<IRAMRepository, RAMRepository>();
 
-            services.AddDbContext<PCContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //        services.AddDbContext<PCContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<Context>(options => options.UseSqlite(Configuration.GetConnectionString("SQLLiteConnection")));
 
         }
 

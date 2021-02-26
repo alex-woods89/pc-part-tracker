@@ -1,24 +1,38 @@
-﻿@model PC 
+﻿@model PCPartTracker.ViewModels.PCViewModel;
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Index</h2>
 
-<div>
-    <ul>
-        <li>GPU @Model.GPU.Name</li>
-        <li>CPU @Model.CPU.Name</li>
-        <li>PSU @Model.PSU.Name</li>
-        <li>Mother Board @Model.Motherboard.Name</li>
-        <li>HardDrive @Model.Harddrive.Name</li>
-        <li>RAM @Model.RAM.Name</li>
-        <li>Case @Model.Case.Name</li>
-    </ul>
-    
-</div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            PCs
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (PC pc in Model.PCs)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => pc.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", pc) |
+                @Html.ActionLink("Details", "Details", pc) |
+                @Html.ActionLink("Delete", "Delete", pc)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
 

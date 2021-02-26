@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PCPartTracker.Data
 {
-    public class PCContext : DbContext
+    public class Context : DbContext
     {
-        public PCContext(DbContextOptions<PCContext> options) : base(options)
+        public Context(DbContextOptions<Context> options) : base(options)
         {
         }
 
@@ -25,11 +25,8 @@ namespace PCPartTracker.Data
 
         public DbSet<RAM> RAMs { get; set; }
 
-       public DbSet<PC> PCs { get; set; }
-       public DbSet<GPU> GPUs { get; set; }
+        public DbSet<PC> PCs { get; set; }
 
-
-
-
+        public DbSet<GPU> GPUs { get; set; }
     }
 }

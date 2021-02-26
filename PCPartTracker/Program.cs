@@ -28,7 +28,7 @@ namespace PCPartTracker
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<PCContext>();
+                var context = services.GetRequiredService<Context>();
                 DbSeedData.Initialize(context);
                 //try
                 //{
