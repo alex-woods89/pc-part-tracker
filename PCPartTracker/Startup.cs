@@ -40,7 +40,7 @@ namespace PCPartTracker
             //        services.AddDbContext<PCContext>(options =>
             //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<Context>(options => options.UseSqlite(Configuration.GetConnectionString("SQLLiteConnection")));
+            services.AddDbContext<Context>(options => options.UseSqlite(Configuration.GetConnectionString("SQLLiteConnection")).EnableSensitiveDataLogging(true));
 
         }
 

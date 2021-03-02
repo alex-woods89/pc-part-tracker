@@ -33,6 +33,15 @@ namespace PCPartTracker.Repositories
 
         public void deletePC(PC pc)
         {
+            var local = _context.Set<PC>().Local.FirstOrDefault(entry => entry.ID.Equals(pc.ID));
+
+            // check if local is not null 
+            if (local != null)
+            {
+                // detach
+                _context.Entry(local).State = EntityState.Detached;
+            }
+
             _context.PCs.Remove(pc);
             _context.SaveChanges();
         }

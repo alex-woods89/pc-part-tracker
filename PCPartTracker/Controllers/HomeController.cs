@@ -5,6 +5,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
 using Microsoft.Extensions.Logging;
 using PCPartTracker.Models;
@@ -25,6 +26,7 @@ namespace PCPartTracker.Controllers
         private IMotherboardRepository _motherboardRepo;
         private IPSURepository _psuRepo;
         private IRAMRepository _ramRepo;
+        private PCViewModel _pcs;
 
         public HomeController(ILogger<HomeController> logger, IPCRepositiory pcRepo, ICaseRepository caseRepo, ICPURepository cpuRepo, IGPURepository gpuRepo, IHarddriveRepository harddriveRepo, IMotherboardRepository motherboardRepo, IPSURepository psuRepo, IRAMRepository ramRepo)
         {
@@ -37,31 +39,25 @@ namespace PCPartTracker.Controllers
             _motherboardRepo = motherboardRepo;
             _psuRepo = psuRepo;
             _ramRepo = ramRepo;
+
+            _pcs = new PCViewModel();
+            _pcs.PCs = _pcRepo.getPCs().ToList();
+            _pcs.Cases = _caseRepo.getCases().ToList();
+            _pcs.CPUs = _cpuRepo.getCPUs().ToList();
+            _pcs.GPUs = _gpuRepo.getGPUS().ToList();
+            _pcs.Harddrives = _harddriveRepo.getHarddrives().ToList();
+            _pcs.Motherboards = _motherboardRepo.getMotherboards().ToList();
+            _pcs.PSUs = _psuRepo.getPSUs().ToList();
+            _pcs.RAMs = _ramRepo.getRAMs().ToList();
         }
 
         public IActionResult Index()
         {
-            PCViewModel pcs = new PCViewModel();
-            pcs.PCs = _pcRepo.getPCs().ToList();
-            pcs.Cases = _caseRepo.getCases().ToList();
-            pcs.CPUs = _cpuRepo.getCPUs().ToList();
-            pcs.GPUs = _gpuRepo.getGPUS().ToList();
-            pcs.Harddrives = _harddriveRepo.getHarddrives().ToList();
-            pcs.Motherboards = _motherboardRepo.getMotherboards().ToList();
-            pcs.PSUs = _psuRepo.getPSUs().ToList();
-            pcs.RAMs = _ramRepo.getRAMs().ToList();
-            return View(pcs);
+            return View(_pcs);
         }
 
         public IActionResult Create()
         {
-            //ViewData["Cases"] = _caseRepo.getCases().ToList();
-            //ViewData["CPUs"] = _cpuRepo.getCPUs().ToList();
-            //ViewData["GPUs"] = _gpuRepo.getGPUS().ToList();
-            //ViewData["Harddrives"] = _harddriveRepo.getHarddrives().ToList();
-            //ViewData["Motherboards"] = _motherboardRepo.getMotherboards().ToList();
-            //ViewData["PSUs"] = _psuRepo.getPSUs().ToList();
-            //ViewData["RAMs"] = _ramRepo.getRAMs().ToList();
             return View();
         }
 
@@ -91,13 +87,14 @@ namespace PCPartTracker.Controllers
         public IActionResult Edit(int id)
         {
             PC pc = _pcRepo.findPC(id);
-            return View(pc);
+            _pcs.Pc = pc;
+            return View(_pcs);
         }
 
         [HttpPost]
-        public IActionResult Edit(PC pc)
+        public IActionResult Edit(PCViewModel pcvm)
         {
-            _pcRepo.updatePC(pc);
+            _pcRepo.updatePC(pcvm.Pc);
             return RedirectToAction("Index");
         }
 

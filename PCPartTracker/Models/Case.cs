@@ -6,7 +6,7 @@ namespace PCPartTracker.Models
     public class Case : IComponent
     {
         [Key]
-        public int PCID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
 
         public string FormFactor { get; set; }

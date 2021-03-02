@@ -15,5 +15,7 @@ namespace PCPartTracker.ViewModels
         public List<Motherboard> Motherboards { get; set; }
         public List<PSU> PSUs { get; set; }
         public List<RAM> RAMs { get; set; }
+        public PC Pc { get; set; }
+        public Case _case { get; set; }
     }
 }

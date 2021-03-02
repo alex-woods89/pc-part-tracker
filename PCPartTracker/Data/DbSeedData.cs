@@ -27,8 +27,8 @@ namespace PCPartTracker.Data
             harddrive.PCID = pc1.ID;
             RAM ram = new RAM("Sandisk", "8GB", 4);
             ram.PCID = pc1.ID;
-            Case _case = new Case("Corsair", FormFactor.ATX.ToString());
-            _case.PCID = pc1.ID;
+            Case _case = new Case("Alienware", FormFactor.ATX.ToString());
+            //_case.PCID = pc1.ID;
 
             pc1.Name = "PC 1";
             pc1.PSU = psu;
@@ -62,7 +62,7 @@ namespace PCPartTracker.Data
             RAM ram1 = new RAM("Sandisk", "8GB", 4);
             ram1.PCID = pc2.ID;
             Case _case1 = new Case("Corsair", FormFactor.MiniATX.ToString());
-            _case1.PCID = pc2.ID;
+            //_case1.PCID = pc2.ID;
 
 
             pc2.Name = "PC 2";

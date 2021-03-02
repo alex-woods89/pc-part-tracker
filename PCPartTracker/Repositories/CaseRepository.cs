@@ -17,7 +17,7 @@ namespace PCPartTracker.Repositories
 
         public Case findCase(int id)
         {
-            return _context.Cases.FirstOrDefault(x => x.PCID == id);
+            return _context.Cases.FirstOrDefault(x => x.ID == id);
         }
 
         public DbSet<Case> getCases()
